@@ -5,20 +5,27 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import NoPage from './pages/NoPage';
-import "antd/dist/antd.css";
+import { Auth0Provider } from '@auth0/auth0-react';
+import 'antd/dist/antd.css';
+const { REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENTID } = process.env;
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path='sign-up' element={<SignUp />} />
-          <Route path='login' element={<Login />} />
-          <Route path='*' element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Auth0Provider
+      domain={REACT_APP_AUTH0_DOMAIN}
+      clientId={REACT_APP_AUTH0_CLIENTID}
+      redirectUri={window.location.origin}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path='sign-up' element={<SignUp />} />
+            <Route path='login' element={<Login />} />
+            <Route path='*' element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Auth0Provider>
   );
 }
 

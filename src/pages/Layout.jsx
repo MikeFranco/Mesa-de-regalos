@@ -30,11 +30,16 @@ const Layout = () => {
           <Menu.Item onClick={() => loginWithRedirect()}>Login</Menu.Item>
         )}
         {isAuthenticated && (
-          <Menu.Item
-            key='login'
-            onClick={() => logout({ returnTo: window.location.origin })}>
-            Logout
-          </Menu.Item>
+          <>
+            <Menu.Item key='shop'>
+              <Link to='/shop'>Comprar Regalos</Link>
+            </Menu.Item>
+            <Menu.Item
+              key='login'
+              onClick={() => logout({ returnTo: window.location.origin })}>
+              Logout
+            </Menu.Item>
+          </>
         )}
         {isAuthenticated && (
           <>

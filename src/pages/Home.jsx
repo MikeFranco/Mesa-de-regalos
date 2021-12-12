@@ -1,6 +1,8 @@
 import { Row, Col } from 'antd';
 import '../index.css';
 import principal from '../assets/img/principal.jpg';
+import novia from '../assets/img/novia.jpg';
+import novio from '../assets/img/novio.jpg';
 
 const Home = () => {
   return (
@@ -24,33 +26,74 @@ const Home = () => {
           }}>
           <Col span={12}>
             {' '}
-            <h2 className='text-white'>Nuestra Boda</h2>
-            <h2 className='text-importante'>Diana &amp; Steve</h2>
+            <h2 style={{ textAlign: 'center' }} className='text-white'>
+              Nuestra Boda
+            </h2>
+            <h2
+              style={{ textAlign: 'center' }}
+              className='text-white text-importante'>
+              Diana &amp; Rodrigo
+            </h2>
           </Col>
         </Row>
       </div>
-      <section class='acerca-novia' id='acercaDe'>
-        <div class='container-fluid'>
-          <div class='row'>
-            <div class='col-12 col-md-6 d-md-flex bg-light py-4 edit-novia'>
-              <div class='info-novia align-self-center'>
-                <h2>Acerca de la novia</h2>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Optio commodi deserunt sunt dolores ea? Dolore, quia eos? Ut
-                  facere, iusto quia vitae possimus eaque fugit veniam tenetur
-                  amet sit quod.
-                </p>
-                <p>Padres de la novia: Antonio Rodriguez y Berenice Espinoza</p>
-              </div>
+      <section className='acerca-novia' id='acercaDe'>
+        <Row>
+          <Col span={16} className='edit-novia'>
+            <div className='info-novia'>
+              <h2>Acerca de la novia</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio
+                commodi deserunt sunt dolores ea? Dolore, quia eos? Ut facere,
+                iusto quia vitae possimus eaque fugit veniam tenetur amet sit
+                quod.
+              </p>
+              <p>Padres de la novia: Antonio Rodriguez y Berenice Espinoza</p>
             </div>
+          </Col>
+          <Col span={8}>
             <img
-              src='assets/img/novia.jpg'
+              src={novia}
               alt='imagen de la novia'
-              class='img-fluid col-12 col-md-6 p-0'
+              style={{
+                height: '100%',
+                width: '100%',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center'
+              }}
             />
-          </div>
-        </div>
+          </Col>
+        </Row>
+      </section>
+      <section className='acerca-novio' id='acercaDe'>
+        <Row>
+          <Col span={8}>
+            <img
+              src={novio}
+              alt='imagen del novio'
+              style={{
+                height: '100%',
+                width: '100%',
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center'
+              }}
+            />
+          </Col>
+          <Col span={16} className='edit-novia'>
+            <div className='info-novia'>
+              <h2>Acerca del novio</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio
+                commodi deserunt sunt dolores ea? Dolore, quia eos? Ut facere,
+                iusto quia vitae possimus eaque fugit veniam tenetur amet sit
+                quod.
+              </p>
+              <p>Padres de la novia: Ricardo González y Claudia Mendoza</p>
+            </div>
+          </Col>
+        </Row>
       </section>
     </>
   );

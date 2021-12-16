@@ -1,14 +1,22 @@
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AboutSections } from './components/AboutSections';
+import { Auth0Provider } from '@auth0/auth0-react';
 import Layout from './pages/Layout';
 import EventsLayout from './pages/EventsLayout';
 import Shop from './pages/Shop';
 import Login from './pages/Login';
 import NoPage from './pages/NoPage';
 import Home from './pages/Home';
-import { Auth0Provider } from '@auth0/auth0-react';
-import 'antd/dist/antd.css';
+import bebe from './assets/img/bebe.jpg';
+import nino from './assets/img/nino.jpg';
 import principal from './assets/img/principal.jpg';
+import novia from './assets/img/novia.jpg';
+import novio from './assets/img/novio.jpg';
+import quinceañera from './assets/img/quinceañera.jpg';
+import graduado from './assets/img/graduado.jpg';
+import 'antd/dist/antd.css';
+
 const { REACT_APP_AUTH0_DOMAIN, REACT_APP_AUTH0_CLIENTID } = process.env;
 
 export default function App() {
@@ -27,7 +35,23 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Nuestra boda'
                   subTitle='Diana & Rodrigo'
-                  headerImg={principal}
+                  headerImg='boda'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca de la novia',
+                        bottomP:
+                          'Padres de la novia: Antonio Rodriguez y Berenice Espinoza',
+                        img: novia
+                      }}
+                      secondSection={{
+                        title: 'Acerca del novio',
+                        bottomP:
+                          'Padres de la novia: Ricardo González y Claudia Mendoza',
+                        img: novio
+                      }}
+                    />
+                  }
                 />
               }
             />
@@ -37,7 +61,17 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Mis XV años'
                   subTitle='Alicia'
-                  headerImg={principal}
+                  headerImg='xv'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca de la quinceañera',
+                        bottomP:
+                          'Padres de la quinceañera: Antonio Rodriguez y Berenice Espinoza',
+                        img: quinceañera
+                      }}
+                    />
+                  }
                 />
               }
             />
@@ -47,7 +81,17 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Mi bautizo'
                   subTitle='Ricardo'
-                  headerImg={principal}
+                  headerImg='bautizo'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca del bebé',
+                        bottomP:
+                          'Padres del bebé: Antonio Rodriguez y Berenice Espinoza',
+                        img: bebe
+                      }}
+                    />
+                  }
                 />
               }
             />
@@ -57,7 +101,17 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Te invito a mis 3 años'
                   subTitle='Alejandrito'
-                  headerImg={principal}
+                  headerImg='fiesta'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca del cumpleañero',
+                        bottomP:
+                          'Padres del niño: Antonio Rodriguez y Berenice Espinoza',
+                        img: nino
+                      }}
+                    />
+                  }
                 />
               }
             />
@@ -67,7 +121,17 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Mi cumpleaños'
                   subTitle='Alejandra'
-                  headerImg={principal}
+                  headerImg='cumple'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca de la festejada',
+                        bottomP:
+                          'Padres de la novia: Antonio Rodriguez y Berenice Espinoza',
+                        img: novia
+                      }}
+                    />
+                  }
                 />
               }
             />
@@ -77,7 +141,17 @@ export default function App() {
                 <EventsLayout
                   mainTitle='Mi graduación'
                   subTitle='Mario'
-                  headerImg={principal}
+                  headerImg='graduacion'
+                  aboutSection={
+                    <AboutSections
+                      firstSection={{
+                        title: 'Acerca del graduado',
+                        bottomP:
+                          'Padres de la novia: Antonio Rodriguez y Berenice Espinoza',
+                        img: graduado
+                      }}
+                    />
+                  }
                 />
               }
             />

@@ -77,11 +77,11 @@ a {
 }
 
 .nuestra-boda {
-  background-image: url(./assets/img/principal.jpg) !important;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   height: 100vh;
+  width: 100%;
 }
 
 .acerca-novia,

@@ -6,16 +6,16 @@ import { useAuth0 } from '@auth0/auth0-react';
 const { SubMenu } = Menu;
 
 const Layout = () => {
-  const { loginWithRedirect, logout, user, isAuthenticated } =
-    useAuth0();
+  const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0();
   const [currentTab, setCurrentTab] = useState({
-    current: 'event'
+    current: 'event:1'
   });
 
   const handleClick = e => {
     console.log('click ', e);
     setCurrentTab({ current: e.key });
   };
+
   return (
     <>
       <Menu
@@ -44,7 +44,9 @@ const Layout = () => {
           </Menu.Item>
         </SubMenu>
         {!isAuthenticated && (
-          <Menu.Item onClick={() => loginWithRedirect()}>Login</Menu.Item>
+          <Menu.Item key='login' onClick={() => loginWithRedirect()}>
+            Login
+          </Menu.Item>
         )}
         {isAuthenticated && (
           <>

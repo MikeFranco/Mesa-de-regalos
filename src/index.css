@@ -24,6 +24,16 @@ code {
   color: #ffffff;
 }
 
+.carouselImage {
+  height: 35vh;
+  line-height: 160px;
+  text-align: inherit;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding-top: 22%;
+  padding-left: 35%;
+}
+
 h1,
 h2,
 h3,

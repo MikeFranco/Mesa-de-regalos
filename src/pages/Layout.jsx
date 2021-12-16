@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { Menu, Button } from 'antd';
+import { Menu } from 'antd';
 import { Outlet, Link } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 
 const { SubMenu } = Menu;
 
 const Layout = () => {
-  const { loginWithRedirect, logout, user, isAuthenticated, isLoading } =
+  const { loginWithRedirect, logout, user, isAuthenticated } =
     useAuth0();
   const [currentTab, setCurrentTab] = useState({
-    current: 'home'
+    current: 'event'
   });
 
   const handleClick = e => {
@@ -23,9 +23,26 @@ const Layout = () => {
         selectedKeys={[currentTab]}
         mode='horizontal'
         theme='dark'>
-        <Menu.Item key='home'>
-          <Link to='/'>Home</Link>
-        </Menu.Item>
+        <SubMenu key='SubMenu' title='Eventos'>
+          <Menu.Item key='event:1'>
+            <Link to='/boda'>Boda Diana y Rodrigo</Link>
+          </Menu.Item>
+          <Menu.Item key='event:2'>
+            <Link to='/xv'>XV Alicia</Link>
+          </Menu.Item>
+          <Menu.Item key='event:3'>
+            <Link to='/bautizo'>Bautizo Ricardo</Link>
+          </Menu.Item>
+          <Menu.Item key='event:4'>
+            <Link to='/fiestas'>Fiesta Alejandrito</Link>
+          </Menu.Item>
+          <Menu.Item key='event:5'>
+            <Link to='/para-ella'>Cumpleaños Alejandra</Link>
+          </Menu.Item>
+          <Menu.Item key='event:6'>
+            <Link to='/para-el'>Graduación Mario</Link>
+          </Menu.Item>
+        </SubMenu>
         {!isAuthenticated && (
           <Menu.Item onClick={() => loginWithRedirect()}>Login</Menu.Item>
         )}
